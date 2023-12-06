@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "718838470059",
+    "project_id": "hachimygaming",
+    "storage_bucket": "hachimygaming.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718838470059:android:ceb3ea04f41bf30ebdaeee",
+        "android_client_info": {
+          "package_name": "com.kimi.hachimy_gaming"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDcM8Huzy9fDhwaMY17pLI2su12_7Q4R4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
