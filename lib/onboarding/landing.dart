@@ -61,7 +61,8 @@ class _LandingState extends State<Landing> {
                               'You can click or copy this link and paste it at your browser'
                             ]);
                             choice.clear();
-                            choice.addAll(['copy-link', 'open-link']);
+                            choice.addAll(
+                                ['copy-link', 'open-link', 'Back to Home']);
                             setState(() {
                               _display = false;
                             });
@@ -81,7 +82,8 @@ class _LandingState extends State<Landing> {
                               'You can click or copy this link and paste it at your browser'
                             ]);
                             choice.clear();
-                            choice.addAll(['copy-link', 'open-link']);
+                            choice.addAll(
+                                ['copy-link', 'open-link', 'Back to Home']);
                             setState(() {
                               _display = false;
                             });
@@ -90,11 +92,28 @@ class _LandingState extends State<Landing> {
                               'Thanks for joining.. Feel free to explore more XD'
                             ]);
                             choice.clear();
+                          } else if (item == 'Watch my Tiktok Live') {
+                            mp.update(['Navigating to Tiktok']);
+                            launchUrl(Uri.parse(tiktokUrl));
+                            choice.clear();
+                            choice.addAll(['Back to Home']);
+                            setState(() {
+                              _display = false;
+                            });
+                          } else if (item == 'Back to Home') {
+                            mp.update(['Navigating to Tiktok']);
+                            choice.clear();
+                            choice.addAll(['Join Discord', 'Become SUS Army']);
+                            setState(() {
+                              _display = false;
+                            });
                           } else {
                             mp.update([
                               'Join SUS army during my live and enjoy many benefits...'
                             ]);
                             choice.clear();
+                            choice.addAll(
+                                ['Watch my Tiktok Live', 'Back to Home']);
                             setState(() {
                               _display = false;
                             });
