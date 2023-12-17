@@ -1,7 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hachimy_gaming/const/const_string.dart';
-import 'package:hachimy_gaming/landing.dart';
+import 'package:hachimy_gaming/onboarding/landing.dart';
+import 'package:hachimy_gaming/onboarding/message_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'firebase_options.dart';
 
@@ -19,13 +21,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: appName,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
-        useMaterial3: true,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => MessageProvider())
+      ],
+      child: MaterialApp(
+        title: appName,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
+          useMaterial3: true,
+        ),
+        home: const Landing(),
       ),
-      home: const Landing(),
     );
   }
 }

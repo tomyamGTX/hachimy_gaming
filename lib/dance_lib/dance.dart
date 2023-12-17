@@ -34,9 +34,6 @@ class _GenshinDanceState extends State<GenshinDance> {
   Widget build(BuildContext context) {
     List<VideoPlayerController> list = [_controller, _controller2];
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Genshin Dance"),
-      ),
       body: PageView.builder(
         controller: _pageController,
         itemCount: list.length,
