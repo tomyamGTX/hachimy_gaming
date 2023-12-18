@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hachimy_gaming/const/const_string.dart';
-import 'package:hachimy_gaming/onboarding/landing.dart';
-import 'package:hachimy_gaming/onboarding/message_provider.dart';
+import 'package:hachimy_gaming/vn_lib/landing.dart';
+import 'package:hachimy_gaming/vn_lib/message_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'firebase_options.dart';
