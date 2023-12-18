@@ -99,13 +99,14 @@ class _LandingState extends State<Landing> {
                               'Welcome to my website. Do you need anything?'
                             ]);
                             choice.clear();
-                            choice.addAll(['Join Discord', 'Become SUS Army']);
+                            choice.addAll(
+                                ['Join Discord', 'Become $supporterName']);
                             setState(() {
                               _display = false;
                             });
                           } else {
                             mp.update([
-                              'Join SUS army during my live and enjoy many benefits...'
+                              'Join $supporterName during my live and enjoy many benefits...'
                             ]);
                             choice.clear();
                             choice.addAll(
