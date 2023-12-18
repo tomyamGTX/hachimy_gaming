@@ -61,7 +61,8 @@ class _LandingState extends State<Landing> {
                               'You can click or copy this link and paste it at your browser'
                             ]);
                             choice.clear();
-                            choice.addAll(['copy-link', 'open-link']);
+                            choice.addAll(
+                                ['copy-link', 'open-link', 'Back to Home']);
                             setState(() {
                               _display = false;
                             });
@@ -70,31 +71,45 @@ class _LandingState extends State<Landing> {
                             await Clipboard.setData(
                                 const ClipboardData(text: discordUrl));
                             choice.clear();
-                            choice.addAll(['Done', 'Back to join discord']);
+                            choice.addAll(['Done']);
                           } else if (item == 'open-link') {
                             launchUrl(Uri.parse(discordUrl));
                             mp.update(['navigating discord ...']);
                             choice.clear();
-                            choice.addAll(['Done', 'Back to join discord']);
-                          } else if (item == 'Back to join discord') {
-                            mp.update([
-                              'You can click or copy this link and paste it at your browser'
-                            ]);
-                            choice.clear();
-                            choice.addAll(['copy-link', 'open-link']);
-                            setState(() {
-                              _display = false;
-                            });
+                            choice.addAll(['Done']);
                           } else if (item == 'Done') {
                             mp.update([
                               'Thanks for joining.. Feel free to explore more XD'
                             ]);
                             choice.clear();
+                            choice.addAll(['Back to Home']);
+                            setState(() {
+                              _display = false;
+                            });
+                          } else if (item == 'Watch my Tiktok Live') {
+                            mp.update(['Navigating to Tiktok...']);
+                            launchUrl(Uri.parse(tiktokUrl));
+                            choice.clear();
+                            choice.addAll(['Back to Home']);
+                            setState(() {
+                              _display = false;
+                            });
+                          } else if (item == 'Back to Home') {
+                            mp.update([
+                              'Welcome to my website. Do you need anything?'
+                            ]);
+                            choice.clear();
+                            choice.addAll(['Join Discord', 'Become SUS Army']);
+                            setState(() {
+                              _display = false;
+                            });
                           } else {
                             mp.update([
                               'Join SUS army during my live and enjoy many benefits...'
                             ]);
                             choice.clear();
+                            choice.addAll(
+                                ['Watch my Tiktok Live', 'Back to Home']);
                             setState(() {
                               _display = false;
                             });
@@ -119,7 +134,7 @@ class _LandingState extends State<Landing> {
                       ),
                       Flexible(
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.black54,
                           ),
                           width: size.width,
