@@ -5,3 +5,4 @@ const subscribeUrl = "https://vt.tiktok.com/ZSNawRhsn/";
 const charName = "Hutao";
 const supporterName = 'SUS Army';
 const charImagePath = 'assets/hutao.png';
+const bgImagePath = 'assets/bg.jpg';

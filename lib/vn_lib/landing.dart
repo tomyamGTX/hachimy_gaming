@@ -43,7 +43,7 @@ class _LandingState extends State<Landing> {
           child: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/bg.jpg'), fit: BoxFit.cover)),
+                    image: AssetImage(bgImagePath), fit: BoxFit.cover)),
             height: size.height,
             width: 400,
             child: Column(
