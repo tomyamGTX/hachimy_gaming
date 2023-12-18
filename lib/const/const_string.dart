@@ -1,8 +1,9 @@
 const appName = "Kut Need Oreo Gaming";
-const tiktokUrl = "https://www.tiktok.com/@hakimimdnoor";
-const discordUrl = "https://discord.gg/ZJkeRhcKY8";
+const tiktokUrl = "https://www.tiktok.com/@is_zwanz";
+const discordUrl = "https://discord.com/invite/36XpcW2jGm";
 const subscribeUrl = "https://vt.tiktok.com/ZSNawRhsn/";
 const charName = "Kokomi";
-const supporterName = 'Biskuties';
+const supporterName = 'KUT Army';
 const charImagePath = 'assets/kokomi.png';
 const bgImagePath = 'assets/bg.jpg';
+const discordChannelName = 'Biskut Family';

@@ -2,7 +2,6 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hachimy_gaming/const/const_string.dart';
-import 'package:hachimy_gaming/home/home.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -16,7 +15,10 @@ class Landing extends StatefulWidget {
 }
 
 class _LandingState extends State<Landing> {
-  var choice = ['Join Discord', 'Become $supporterName'];
+  var choice = [
+    'Join $discordChannelName',
+    'Become $supporterName',
+  ];
 
   var repeatCounter = 1;
 
@@ -28,17 +30,17 @@ class _LandingState extends State<Landing> {
     var mp = Provider.of<MessageProvider>(context);
     return Scaffold(
         backgroundColor: const Color(0xffffffff),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-        floatingActionButton: Padding(
-          padding: const EdgeInsets.only(top: 16.0),
-          child: FloatingActionButton.extended(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const Home()));
-            },
-            label: const Text("Skip"),
-          ),
-        ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        // floatingActionButton: Padding(
+        //   padding: const EdgeInsets.only(top: 16.0),
+        //   child: FloatingActionButton.extended(
+        //     onPressed: () {
+        //       Navigator.push(context,
+        //           MaterialPageRoute(builder: (context) => const Home()));
+        //     },
+        //     label: const Text("Skip"),
+        //   ),
+        // ),
         body: Center(
           child: Container(
             decoration: const BoxDecoration(
