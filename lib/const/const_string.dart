@@ -4,3 +4,4 @@ const discordUrl = "https://discord.gg/ZJkeRhcKY8";
 const subscribeUrl = "https://vt.tiktok.com/ZSNawRhsn/";
 const charName = "Hutao";
 const supporterName = 'SUS Army';
+const charImagePath = 'assets/hutao.png';

@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hachimy_gaming/const/const_string.dart';
 import 'package:hachimy_gaming/home/home.dart';
-import 'package:hachimy_gaming/onboarding/message_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'message_provider.dart';
 
 class Landing extends StatefulWidget {
   const Landing({super.key});
@@ -128,7 +129,7 @@ class _LandingState extends State<Landing> {
                         child: Align(
                           alignment: Alignment.bottomLeft,
                           child: Image.asset(
-                            'assets/hutao.png',
+                            charImagePath,
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -142,7 +143,7 @@ class _LandingState extends State<Landing> {
                           child: Center(
                             child: Column(
                               children: [
-                                SizedBox(height: 8),
+                                const SizedBox(height: 8),
                                 const Text(charName,
                                     style: TextStyle(
                                         fontFamily: 'Agne',
