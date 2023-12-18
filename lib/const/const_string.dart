@@ -12,3 +12,4 @@ const bgImagePath = [
   'assets/bg3.jpg'
 ];
 const discordChannelName = 'Biskut Family';
+//firebase deploy --only hosting:biskut
