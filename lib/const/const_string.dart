@@ -5,5 +5,10 @@ const subscribeUrl = "https://vt.tiktok.com/ZSNawRhsn/";
 const charName = "Kokomi";
 const supporterName = 'KUT Army';
 const charImagePath = 'assets/kokomi.png';
-const bgImagePath = 'assets/bg.jpg';
+const bgImagePath = [
+  'assets/bg.jpg',
+  'assets/bg1.jpg',
+  'assets/bg2.jpg',
+  'assets/bg3.jpg'
+];
 const discordChannelName = 'Biskut Family';

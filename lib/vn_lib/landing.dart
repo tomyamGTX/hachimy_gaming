@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -21,9 +23,8 @@ class _LandingState extends State<Landing> {
   ];
 
   var repeatCounter = 1;
-
   var _display = false;
-
+  var index = 0;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -43,9 +44,9 @@ class _LandingState extends State<Landing> {
         // ),
         body: Center(
           child: Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(bgImagePath), fit: BoxFit.cover)),
+                    image: AssetImage(bgImagePath[index]), fit: BoxFit.cover)),
             height: size.height,
             width: 400,
             child: Column(
@@ -59,54 +60,50 @@ class _LandingState extends State<Landing> {
                         backgroundColor: Colors.amber.shade200,
                         label: Text(item),
                         onPressed: () async {
-                          if (item == 'Join Discord') {
+                          if (item == 'Join $discordChannelName') {
                             mp.update([
                               'You can click or copy this link and paste it at your browser'
                             ]);
                             choice.clear();
                             choice.addAll(
                                 ['copy-link', 'open-link', 'Back to Home']);
-                            setState(() {
-                              _display = false;
-                            });
+                            resetDialogue();
                           } else if (item == 'copy-link') {
                             mp.update(['link copied']);
                             await Clipboard.setData(
                                 const ClipboardData(text: discordUrl));
                             choice.clear();
                             choice.addAll(['Done']);
+                            resetDialogue();
                           } else if (item == 'open-link') {
                             launchUrl(Uri.parse(discordUrl));
                             mp.update(['navigating discord ...']);
                             choice.clear();
                             choice.addAll(['Done']);
+                            resetDialogue();
                           } else if (item == 'Done') {
                             mp.update([
                               'Thanks for joining.. Feel free to explore more XD'
                             ]);
                             choice.clear();
                             choice.addAll(['Back to Home']);
-                            setState(() {
-                              _display = false;
-                            });
+                            resetDialogue();
                           } else if (item == 'Watch my Tiktok Live') {
                             mp.update(['Navigating to Tiktok...']);
                             launchUrl(Uri.parse(tiktokUrl));
                             choice.clear();
                             choice.addAll(['Back to Home']);
-                            setState(() {
-                              _display = false;
-                            });
+                            resetDialogue();
                           } else if (item == 'Back to Home') {
                             mp.update([
                               'Welcome to my website. Do you need anything?'
                             ]);
                             choice.clear();
-                            choice.addAll(
-                                ['Join Discord', 'Become $supporterName']);
-                            setState(() {
-                              _display = false;
-                            });
+                            choice.addAll([
+                              'Join $discordChannelName',
+                              'Become $supporterName'
+                            ]);
+                            resetDialogue();
                           } else {
                             mp.update([
                               'Join $supporterName during my live and enjoy many benefits...'
@@ -114,9 +111,7 @@ class _LandingState extends State<Landing> {
                             choice.clear();
                             choice.addAll(
                                 ['Watch my Tiktok Live', 'Back to Home']);
-                            setState(() {
-                              _display = false;
-                            });
+                            resetDialogue();
                           }
                         },
                       ),
@@ -195,5 +190,14 @@ class _LandingState extends State<Landing> {
             ),
           ),
         ));
+  }
+
+  void resetDialogue() {
+    var random = Random().nextInt(3);
+    setState(() {
+      index = random;
+      print(random);
+      _display = false;
+    });
   }
 }
