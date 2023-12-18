@@ -128,7 +128,7 @@ class _LandingState extends State<Landing> {
                         child: Align(
                           alignment: Alignment.bottomLeft,
                           child: Image.asset(
-                            'assets/hutao.png',
+                            'assets/kokomi.png',
                             fit: BoxFit.fill,
                           ),
                         ),
