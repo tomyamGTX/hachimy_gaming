@@ -15,7 +15,7 @@ class Landing extends StatefulWidget {
 }
 
 class _LandingState extends State<Landing> {
-  var choice = ['Join Discord', 'Become SUS Army'];
+  var choice = ['Join Discord', 'Become $supporterName'];
 
   var repeatCounter = 1;
 
